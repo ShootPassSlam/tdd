@@ -1,2 +1,0 @@
-# tdd
-TDD learning project
