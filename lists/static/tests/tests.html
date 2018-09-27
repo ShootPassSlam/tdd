@@ -21,15 +21,25 @@
 
   <script>
 
-
 QUnit.test("errors should be hidden on keypress", function (assert) {
-  initialize();
-  $('input[name="text"]').trigger('keypress');
+  window.Superlists.initialize();
+  $('input[name="text"]').change();
   assert.equal($('.has-error').is(':visible'), false);
 });
 
 QUnit.test("errors aren't hidden if there is no keypress", function (assert) {
-  initialize();
+  window.Superlists.initialize();
+  assert.equal($('.has-error').is(':visible'), true);
+});
+
+QUnit.test("errors should be hidden on click in box", function (assert) {
+  window.Superlists.initialize();
+  $('input[name="text"]').click();
+  assert.equal($('.has-error').is(':visible'), false);
+});
+
+QUnit.test("errors aren't hidden if there is no click in box", function (assert) {
+  window.Superlists.initialize();
   assert.equal($('.has-error').is(':visible'), true);
 });
 
