@@ -21,7 +21,7 @@ class LoginTest(FunctionalTest):
 
         email_id = None
         start = time.time()
-        inbox = poplib.POP3_SSL('pop.mail.yahoo.com')
+        inbox = poplib.POP3_SSL('pop.gmail.com')
         try:
             inbox.user(test_email)
             inbox.pass_(os.environ['GOOGLE_PASSWORD'])
