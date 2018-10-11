@@ -29,7 +29,16 @@ def new_list(request):
         return redirect(str(list_.get_absolute_url()))
     return render(request, 'home.html', {'form': form})
 
-
 def my_lists(request, email):
     owner = User.objects.get(email=email)
+    # import pdb; pdb.set_trace()
     return render(request, 'my_lists.html', {'owner': owner})
+
+def shared_list(request, list_id):
+    list_ = List.objects.get(id=list_id)
+    email = request.POST['sharee']
+    try:
+        list_.shared_with.add(email)
+        return redirect(str(list_.get_absolute_url()))
+    except User.DoesNotExist:
+        return redirect(str(list_.get_absolute_url()))
