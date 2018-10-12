@@ -1,0 +1,8 @@
+[live]
+domstddlistapp.info ansible_become=yes ansible_ssh_user=domscotto
+
+[staging]
+staging.domstddlistapp.info ansible_become=yes ansible_ssh_user=domscotto
+
+[local]
+localhost ansible_ssh_user=root ansible_ssh_port=8000 ansible_host=127.0.0.1
