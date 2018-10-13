@@ -82,9 +82,16 @@
       </div>
 
     </div>
+    {% block footer %}
+    <footer class="footer navbar-fixed-bottom">
+        <div class="footer-copyright text-center py-3 text-dark">
+            <p> Contact me at <a href="mailto:dominicscotto@gmail.com">dominicscotto@gmail.com</a></p>
+            <p> Check out the <a href="https://github.com/ShootPassSlam/tdd">Code</a></p>
+        </div>
+    </footer>
+    {% endblock %}
     <script src="/static/jquery-3.3.1.min.js"></script>
     <script src="/static/list.js"></script>
-
     <script>
     $(document).ready(function () {
       window.Superlists.initialize();
